@@ -1,0 +1,1 @@
+{"background_color":"#000000","display":"browser","icons":[{"sizes":"144x144","src":"NeonPong.144x144.png","type":"image/png"},{"sizes":"180x180","src":"NeonPong.180x180.png","type":"image/png"},{"sizes":"512x512","src":"NeonPong.512x512.png","type":"image/png"}],"name":"Neon pong","orientation":"any","start_url":"./NeonPong.html"}
