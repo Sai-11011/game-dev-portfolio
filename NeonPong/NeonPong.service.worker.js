@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1771667638|1664111570';
+const CACHE_VERSION = '1771672640|50481307';
 /** @type {string} */
 const CACHE_PREFIX = 'Neon pong-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
