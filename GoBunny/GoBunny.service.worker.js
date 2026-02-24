@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1771759916|19896094064';
+const CACHE_VERSION = '1771959892|283026454';
 /** @type {string} */
 const CACHE_PREFIX = 'Cyborg bun-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
