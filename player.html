@@ -40,7 +40,6 @@
             margin-bottom: 20px;
         }
 
-        /* The wrapper that will be pushed to fullscreen */
         .game-wrapper {
             position: relative;
             width: 100%;
@@ -95,7 +94,6 @@
             box-shadow: 0 0 15px rgba(63, 185, 80, 0.4);
         }
 
-        /* Mobile Exit Button - Only visible when wrapper is in fullscreen */
         .exit-fullscreen-btn {
             display: none;
             position: absolute;
@@ -111,7 +109,6 @@
             cursor: pointer;
         }
 
-        /* CSS pseudo-classes to detect fullscreen state */
         .game-wrapper:fullscreen .exit-fullscreen-btn { display: block; }
         .game-wrapper:-webkit-full-screen .exit-fullscreen-btn { display: block; }
         .game-wrapper:-ms-fullscreen .exit-fullscreen-btn { display: block; }
@@ -128,7 +125,6 @@
         <h1 id="game-title">Loading...</h1>
         <p class="description" id="game-desc">Please wait while the game data is retrieved.</p>
 
-        <!-- Game Container -->
         <div class="game-wrapper" id="game-container">
             <!-- Mobile exit button injected inside the wrapper so it comes along to fullscreen -->
             <button class="exit-fullscreen-btn" onclick="closeFullscreen()">Exit Fullscreen ✖</button>
