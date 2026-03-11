@@ -568,7 +568,7 @@
             }
         }
 
-        function showToast(message, color = 'var(--neon-green)', textColor = '#000') {
+        function showToast(message, color = 'var(--neon-green)', textColor = '#000000') {
             const toast = document.getElementById("toast");
             toast.textContent = message;
             toast.style.backgroundColor = color;
@@ -586,7 +586,7 @@
                 document.execCommand('copy');
                 showToast("Discord username 'sai11011' copied to clipboard!", "var(--discord-color)", "#ffffff");
             } catch (err) {
-                showToast("Failed to copy.", "#f85149", "#ffffff");
+                showToast("Failed to copy.", "#f85149", "#fff");
             }
             document.body.removeChild(textArea);
         }
