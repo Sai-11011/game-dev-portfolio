@@ -515,7 +515,7 @@
             },
             "spaceshooter": {
                 title: "SpaceShooter (Work In Progress)",
-                description: "A top-down survival space shooter. Survive 100 enemy waves in a roguelike setup and defeat the master control unit.",
+                description: "A top-down survival space shooter.Survive 100 enemy waves in a roguelike setup and defeat the master control unit.",
                 src: "SpaceShooter/SpaceShooter.html"
             }
         };
@@ -541,7 +541,7 @@
         }
 
         function closeGame() {
-            iframe.src = ''; // Stop game execution/audio
+            iframe.src = ''; 
             viewPlayer.style.display = 'none';
             viewPortfolio.style.display = 'flex';
         }
@@ -584,9 +584,9 @@
             textArea.select();
             try {
                 document.execCommand('copy');
-                showToast("Discord username 'sai11011' copied to clipboard!", "var(--discord-color)", "#fff");
+                showToast("Discord username 'sai11011' copied to clipboard!", "var(--discord-color)", "#ffffff");
             } catch (err) {
-                showToast("Failed to copy.", "#f85149", "#fff");
+                showToast("Failed to copy.", "#f85149", "#ffffff");
             }
             document.body.removeChild(textArea);
         }
