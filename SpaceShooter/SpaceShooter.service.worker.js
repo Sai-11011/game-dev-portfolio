@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1773242774|7561883582';
+const CACHE_VERSION = '1773296611|920238663';
 /** @type {string} */
 const CACHE_PREFIX = 'Space Shooter-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
