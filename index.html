@@ -361,7 +361,84 @@
 
     <div id="toast">Message here</div>
 
-    <script>
+<script>
+        // Game Database
+        const games = {
+            "titanswake": {
+                title: "Titan's Wake",
+                description: "A heavy, punishing top-down arena action game. Survive the swarm, gather shards, and destroy the awakened Titan!",
+                src: "TitansWake/TitansWake.html"
+            },
+            "tictactoe": {
+                title: "Tic-Tac-Toe",
+                description: "A classic web-based implementation built entirely with HTML, CSS, and vanilla JavaScript.",
+                src: "tic tac toe/index.html"
+            },
+            "neonpong": {
+                title: "Neon-Pong",
+                description: "The \"Hello World\" of physics. A juiced-up arcade classic focusing on rigid bodies, collision signals, and basic game loops in Godot.",
+                src: "NeonPong/NeonPong.html"
+            },
+            "gobunny": {
+                title: "GoBunny",
+                description: "An endless runner featuring procedural obstacle generation, global audio buses, and an encrypted data save system.",
+                src: "GoBunny/GoBunny.html"
+            },
+            "spaceshooter": {
+                title: "Space Shooter (Work In Progress)",
+                description: "A top-down survival space shooter. Survive 100 enemy waves in a roguelike setup and defeat the master control unit.",
+                src: "SpaceShooter/SpaceShooter.html"
+            }
+        };
+
+        // UI Management
+        const viewPortfolio = document.getElementById('portfolio-view');
+        const viewPlayer = document.getElementById('player-view');
+        const iframe = document.getElementById('game-iframe');
+        const titleEl = document.getElementById('current-game-title');
+        const descEl = document.getElementById('current-game-desc');
+
+        function playGame(gameId) {
+            const game = games[gameId];
+            if (!game) return;
+
+            titleEl.textContent = game.title;
+            descEl.textContent = game.description;
+            iframe.src = game.src;
+
+            viewPortfolio.style.display = 'none';
+            viewPlayer.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeGame() {
+            iframe.src = ''; 
+            viewPlayer.style.display = 'none';
+            viewPortfolio.style.display = 'flex';
+        }
+
+        const gameContainer = document.getElementById('game-container');
+
+        function openFullscreen() {
+            if (gameContainer.requestFullscreen) {
+                gameContainer.requestFullscreen();
+            } else if (gameContainer.webkitRequestFullscreen) {
+                gameContainer.webkitRequestFullscreen();
+            } else if (gameContainer.msRequestFullscreen) {
+                gameContainer.msRequestFullscreen();
+            }
+        }
+
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+
         function showToast(message, color = 'var(--neon-green)', textColor = '#000') {
             const toast = document.getElementById("toast");
             toast.textContent = message;
