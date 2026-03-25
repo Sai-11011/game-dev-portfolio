@@ -301,6 +301,7 @@
         </div>
 
         <div class="social-links">
+            
             <a href="https://j-sai-srinivas.itch.io/" target="_blank" class="social-btn itch">
                 <svg viewBox="0 0 24 24"><path d="M20.317 4.37a2.982 2.982 0 0 0-1.125-.664l-6.55-2.183a2.973 2.973 0 0 0-1.897 0L4.195 3.706a2.98 2.98 0 0 0-1.125.665C2.126 5.253 1.5 6.365 1.5 7.64v8.72c0 1.275.626 2.387 1.57 3.27a2.98 2.98 0 0 0 1.125.664l6.55 2.183c.307.102.628.153.948.153.32 0 .64-.05.948-.153l6.55-2.183a2.98 2.98 0 0 0 1.125-.664c.944-.883 1.57-1.995 1.57-3.27V7.64c0-1.275-.626-2.387-1.57-3.27Zm-8.317 14.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg>
                 Itch.io
@@ -321,6 +322,14 @@
     <main id="portfolio-view">
         <h2 class="section-heading">Active Projects</h2>
         <div class="game-grid">
+
+            <div class="game-card">
+                <h3 class="game-title">Fountain of Wishes</h3>
+                <p class="game-desc">A physics-based micromanagement game created for Jame Gam. Drop normal, heavy, and bouncy coins into a U-shaped fountain without overflowing the glowing laser line!</p>
+                <div class="button-group">
+                    <a href="play.html?game=coinfountain" class="btn btn-play">Play in Browser</a>
+                    </div>
+            </div>
             <div class="game-card">
                 <h3 class="game-title">SpaceShooter <span style="font-size:0.6em; color:var(--neon-blue); vertical-align: middle; margin-left: 5px; border: 1px solid var(--neon-blue); padding: 2px 6px; border-radius: 4px;">WIP</span></h3>
                 <p class="game-desc">A top-down survival space shooter. Survive 100 enemy waves in a roguelike setup and defeat the master control unit.</p>
@@ -373,6 +382,11 @@
 <script>
         // Game Database
         const games = {
+            "coinfountain": {
+                title: "Coin Fountain Sweeper",
+                description: "A physics-based micromanagement game created for Jame Gam. Drop normal, heavy, and bouncy coins into a fountain without overflowing it!",
+                src: "FountainOfWishes/FountainOfWishes.html" 
+            },
             "titanswake": {
                 title: "Titan's Wake",
                 description: "A heavy, punishing top-down arena action game. Survive the swarm, gather shards, and destroy the awakened Titan!",
