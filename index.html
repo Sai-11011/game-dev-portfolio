@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -301,7 +301,220 @@
             bottom: 50px;
         }
 
-        
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-intro {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: -16px 0 24px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .featured-card {
+            padding: 0;
+        }
+
+        .spotlight-card {
+            grid-column: 1 / -1;
+            width: min(760px, 100%);
+            justify-self: center;
+        }
+
+        .project-image,
+        .placeholder-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+            background: #0d1117;
+        }
+
+        .slideshow-card .project-image {
+            transition: opacity 0.2s ease;
+        }
+
+        .details-button {
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            background: rgba(88, 166, 255, 0.04);
+        }
+
+        .details-button:hover {
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.35);
+        }
+
+        dialog.project-details {
+            width: min(900px, calc(100% - 32px));
+            max-height: 90vh;
+            overflow: auto;
+            color: var(--text-main);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.75);
+        }
+
+        dialog.project-details::backdrop {
+            background: rgba(0, 0, 0, 0.78);
+        }
+
+        .details-header,
+        .details-body {
+            padding: 24px;
+        }
+
+        .details-header {
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .details-header h2 {
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .details-close {
+            align-self: flex-start;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            background: transparent;
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        .details-body p {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .details-body ul {
+            color: var(--text-muted);
+            margin: 0 0 24px 20px;
+        }
+
+        .details-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .details-gallery img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .placeholder-image {
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            color: var(--text-muted);
+            text-align: center;
+            background:
+                linear-gradient(135deg, rgba(88, 166, 255, 0.12), transparent 55%),
+                var(--bg-highlight);
+        }
+
+        .placeholder-image span {
+            border: 1px dashed var(--neon-blue);
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .project-meta {
+            color: var(--neon-purple);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .contributions {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0 0 22px 18px;
+        }
+
+        .contributions li + li {
+            margin-top: 5px;
+        }
+
+        .role-label {
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .status-label {
+            color: var(--neon-blue);
+            border: 1px solid currentColor;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            padding: 2px 6px;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .contribution-section {
+            background: rgba(22, 27, 34, 0.82);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .contribution-section p {
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--neon-blue);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 700px) {
+            header { padding-top: 52px; }
+            .profile-title { font-size: 2.6rem; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .game-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -309,7 +522,7 @@
     <header>
         <h1 class="profile-title">NODENOMAD</h1>
         <div class="profile-name">J Sai Srinivas</div>
-        <p class="profile-subtitle">Exploring game architecture, one node at a time. Systems and Gameplay Programmer gearing up for Game Jams.</p>
+        <p class="profile-subtitle">I build playable games with Godot and GDScript, exploring gameplay mechanics, systems, and game design as I grow.</p>
         
         <div class="skills-container">
             <span class="skill-badge">Godot Engine</span>
@@ -347,69 +560,118 @@
     </header>
 
     <main id="portfolio-view">
-        <h2 class="section-heading">Active Projects</h2>
-        <div class="game-grid">
+        <section class="section" aria-labelledby="featured-heading">
+            <h2 class="section-heading" id="featured-heading">Featured Game Jam Projects</h2>
+            <p class="section-intro">Two collaborative jam games where my role is documented in the project credits.</p>
+            <div class="featured-grid">
+                <article class="game-card featured-card slideshow-card" data-slideshow="fountain">
+                    <img class="project-image" src="assets/projects/fountain/title.png" alt="Fountain of Wishes title screen" data-slide-image>
+                    <div class="card-content">
+                        <div class="project-meta">JameGam · Game Jam Project</div>
+                        <h3 class="game-title">Fountain of Wishes</h3>
+                        <p class="role-label">Role: Programmer &amp; Designer</p>
+                        <p class="game-desc">An arcade survival game about shattering falling magic coins, managing the rising water level, and spending Favor on lifelines.</p>
+                        <h4>My Contributions</h4>
+                        <ul class="contributions">
+                            <li>Credited as the game's Programmer &amp; Designer.</li>
+                            <li>Contributed to the coin-shattering survival loop described on the game page.</li>
+                        </ul>
+                        <div class="button-group">
+                            <a href="https://j-sai-srinivas.itch.io/fountain-of-wishes" class="btn btn-play">Play on Itch.io</a>
+                            <button type="button" class="btn details-button" onclick="openJamDetails('fountain')">Details</button>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="game-card">
-                <h3 class="game-title">Fountain of Wishes</h3>
-                <p class="game-desc">A physics-based micromanagement game created for Jame Gam. Drop normal, heavy, and bouncy coins into a U-shaped fountain without overflowing the glowing laser line!</p>
-                <div class="button-group">
-                    <a href="https://j-sai-srinivas.itch.io/fountain-of-wishes" class="btn btn-download">View on Itch.io</a>
-                </div>
+                <article class="game-card featured-card slideshow-card" data-slideshow="titans">
+                    <img class="project-image" src="assets/projects/TitansWake/title.png" alt="Titan's Wake title screen" data-slide-image>
+                    <div class="card-content">
+                        <div class="project-meta">Game Jam Project</div>
+                        <h3 class="game-title">Titan's Wake</h3>
+                        <p class="role-label">Role: Programmer</p>
+                        <p class="game-desc">A punishing top-down arena action game with a swarm-survival hunt followed by a Titan encounter.</p>
+                        <h4>My Contributions</h4>
+                        <ul class="contributions">
+                            <li>Credited for programming as part of the development team.</li>
+                        </ul>
+                        <div class="button-group">
+                            <a href="https://j-sai-srinivas.itch.io/titans-wake" class="btn btn-play">Play on Itch.io</a>
+                            <button type="button" class="btn details-button" onclick="openJamDetails('titans')">Details</button>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="game-card">
-                <h3 class="game-title">SpaceShooter <span style="font-size:0.6em; color:var(--neon-blue); vertical-align: middle; margin-left: 5px; border: 1px solid var(--neon-blue); padding: 2px 6px; border-radius: 4px;">WIP</span></h3>
-                <p class="game-desc">A top-down survival space shooter. Survive 100 enemy waves in a roguelike setup and defeat the master control unit.</p>
-                <div class="button-group">
-                    <a href="play.html?game=spaceshooter" class="btn btn-play">Play in Browser</a>
-                </div>
-            </div>
+        </section>
 
-            <div class="game-card">
-                <h3 class="game-title">Resonance Guard <span style="font-size:0.6em; color:var(--neon-blue); vertical-align: middle; margin-left: 5px; border: 1px solid var(--neon-blue); padding: 2px 6px; border-radius: 4px;">WIP</span></h3>
-                <p class="game-desc">Play as a nimble little robot desperately defending a tight rooftop from an endless rain of heavy geometry. Your only weapon? Physics.</p>
-                <div class="button-group">
-                    <a href="ResonanceGuard/ResonanceGuard.html" class="btn btn-play">Play in Browser</a>
-                </div>
+        <section class="section" aria-labelledby="personal-heading">
+            <h2 class="section-heading" id="personal-heading">Personal Projects</h2>
+            <div class="game-grid">
+                <article class="game-card slideshow-card spotlight-card" data-slideshow="spaceshooter">
+                    <img class="project-image" src="assets/projects/Space-Shooter/title.png" alt="SpaceShooter title screen" data-slide-image>
+                    <div class="card-content">
+                    <h3 class="game-title">SpaceShooter <span class="status-label">WIP</span></h3>
+                    <p class="game-desc">A top-down survival space shooter. Survive 100 enemy waves in a roguelike setup and defeat the master control unit.</p>
+                    <div class="button-group">
+                        <a href="play.html?game=spaceshooter" class="btn btn-play">Play in Browser</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="game-card">
+                    <h3 class="game-title">Resonance Guard <span class="status-label">WIP</span></h3>
+                    <p class="game-desc">A nimble robot defends a tight rooftop from an endless rain of heavy geometry. Your only weapon? Physics.</p>
+                    <div class="button-group"><a href="ResonanceGuard/ResonanceGuard.html" class="btn btn-play">Play in Browser</a></div>
+                </article>
+                <article class="game-card">
+                    <h3 class="game-title">Tic Tac Toe</h3>
+                    <p class="game-desc">A classic web-based implementation built entirely with HTML, CSS, and vanilla JavaScript.</p>
+                    <div class="button-group"><a href="tic tac toe/index.html" class="btn btn-play">Play in Browser</a></div>
+                </article>
+                <article class="game-card">
+                    <h3 class="game-title">Neon Pong</h3>
+                    <p class="game-desc">A Godot physics prototype focused on rigid bodies, collision signals, and basic game loops.</p>
+                    <div class="button-group">
+                        <a href="play.html?game=neonpong" class="btn btn-play">Play in Browser</a>
+                        <a href="NeonPong/Neon pong.exe" download class="btn btn-download">Download .EXE</a>
+                    </div>
+                </article>
+                <article class="game-card">
+                    <h3 class="game-title">GoBunny</h3>
+                    <p class="game-desc">An endless runner featuring procedural obstacle generation, global audio buses, and encrypted data saves.</p>
+                    <div class="button-group">
+                        <a href="play.html?game=gobunny" class="btn btn-play">Play in Browser</a>
+                        <a href="GoBunny/Go-Bunny.exe" download class="btn btn-download">Download .EXE</a>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="game-card">
-                <h3 class="game-title">Titan's Wake</h3>
-                <p class="game-desc">A heavy, punishing top-down arena action game. Survive 5 minutes against the swarm, gather elemental shards, and destroy the awakened Titan's orbiting cubes!</p>
-                <div class="button-group">
-                    <a href="https://j-sai-srinivas.itch.io/titans-wake" class="btn btn-download">View on Itch.io</a>
-                </div>
-            </div>
-            
-            <div class="game-card">
-                <h3 class="game-title">Tic Tac Toe</h3>
-                <p class="game-desc">A classic web-based implementation built entirely with HTML, CSS, and vanilla JavaScript. Clean logic and responsive design.</p>
-                <div class="button-group">
-                    <a href="tic tac toe/index.html" class="btn btn-play">Play in Browser</a>
-                </div>
-            </div>
+        <section class="section contribution-section" aria-labelledby="contribution-heading">
+            <h2 class="section-heading" id="contribution-heading">What I Can Contribute</h2>
+            <p>Godot and GDScript gameplay implementation, building and iterating on playable prototypes, and experience across personal projects and game-jam games. I’m developing my focus on gameplay mechanics, encounter design, and progression.</p>
+        </section>
 
-            <div class="game-card">
-                <h3 class="game-title">Neon Pong</h3>
-                <p class="game-desc">The "Hello World" of physics. A juiced-up arcade classic focusing on rigid bodies, collision signals, and basic game loops in Godot.</p>
-                <div class="button-group">
-                    <a href="play.html?game=neonpong" class="btn btn-play">Play in Browser</a>
-                    <a href="NeonPong/Neon pong.exe" download class="btn btn-download">Download .EXE</a>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <h3 class="game-title">GoBunny</h3>
-                <p class="game-desc">An endless runner featuring procedural obstacle generation, global audio buses, and an encrypted data save system.</p>
-                <div class="button-group">
-                    <a href="play.html?game=gobunny" class="btn btn-play">Play in Browser</a>
-                    <a href="GoBunny/Go-Bunny.exe" download class="btn btn-download">Download .EXE</a>
-                </div>
-            </div>
-
-        </div>
-        
     </main>
+
+    <dialog class="project-details" id="jam-details" aria-labelledby="jam-details-title">
+        <div class="details-header">
+            <div>
+                <h2 id="jam-details-title">Game details</h2>
+                <span class="project-meta" id="jam-details-meta"></span>
+            </div>
+            <button type="button" class="details-close" onclick="closeJamDetails()" aria-label="Close game details">Close</button>
+        </div>
+        <div class="details-body">
+            <p id="jam-details-description"></p>
+            <h3>Gameplay</h3>
+            <p id="jam-details-gameplay"></p>
+            <h3>My role</h3>
+            <p id="jam-details-role"></p>
+            <h3>Credits</h3>
+            <p id="jam-details-credits"></p>
+            <h3>Screenshots</h3>
+            <div class="details-gallery" id="jam-details-gallery"></div>
+        </div>
+    </dialog>
     
 
     <div id="toast">Message here</div>
@@ -523,6 +785,141 @@
                 showToast("Failed to copy.", "#f85149", "#fff");
             }
             document.body.removeChild(textArea);
+        }
+
+        const slideshowCards = document.querySelectorAll('[data-slideshow]');
+        slideshowCards.forEach((slideshow) => {
+            const slideImage = slideshow.querySelector('[data-slide-image]');
+            const slideSets = {
+                fountain: [
+                {
+                    src: 'assets/projects/fountain/title.png',
+                    alt: 'Fountain of Wishes title screen'
+                },
+                {
+                    src: 'assets/projects/fountain/start menu.png',
+                    alt: 'Fountain of Wishes start menu'
+                },
+                {
+                    src: 'assets/projects/fountain/gameplay.png',
+                    alt: 'Fountain of Wishes gameplay showing falling coins and the water level'
+                },
+                ],
+                titans: [
+                {
+                    src: 'assets/projects/TitansWake/title.png',
+                    alt: "Titan's Wake title screen"
+                },
+                {
+                    src: 'assets/projects/TitansWake/mc.png',
+                    alt: "Titan's Wake player character"
+                },
+                {
+                    src: 'assets/projects/TitansWake/fight.png',
+                    alt: "Titan's Wake combat gameplay"
+                },
+                {
+                    src: 'assets/projects/TitansWake/boss.png',
+                    alt: "Titan's Wake boss encounter"
+                }
+                ],
+                spaceshooter: [
+                {
+                    src: 'assets/projects/Space-Shooter/title.png',
+                    alt: 'SpaceShooter title screen'
+                },
+                {
+                    src: 'assets/projects/Space-Shooter/menu.png',
+                    alt: 'SpaceShooter menu screen'
+                },
+                {
+                    src: 'assets/projects/Space-Shooter/shop.png',
+                    alt: 'SpaceShooter shop screen'
+                },
+                {
+                    src: 'assets/projects/Space-Shooter/battle.png',
+                    alt: 'SpaceShooter gameplay with the player fighting enemies'
+                }
+                ]
+            };
+            const slides = slideSets[slideshow.dataset.slideshow];
+            let slideTimer;
+            let slideIndex = 0;
+
+            function showSlide(index) {
+                slideImage.style.opacity = '0.2';
+                window.setTimeout(() => {
+                    slideImage.src = slides[index].src;
+                    slideImage.alt = slides[index].alt;
+                    slideImage.style.opacity = '1';
+                }, 100);
+            }
+
+            slideshow.addEventListener('mouseenter', () => {
+                if (slideTimer) return;
+                slideTimer = window.setInterval(() => {
+                    slideIndex = (slideIndex + 1) % slides.length;
+                    showSlide(slideIndex);
+                }, 1500);
+            });
+
+            slideshow.addEventListener('mouseleave', () => {
+                window.clearInterval(slideTimer);
+                slideTimer = null;
+                slideIndex = 0;
+                showSlide(slideIndex);
+            });
+
+            showSlide(0);
+        });
+
+        const jamDetails = {
+            fountain: {
+                title: 'Fountain of Wishes',
+                meta: 'JameGam · Game Jam Project',
+                description: 'An endless shower of magic coins fills the basin. Survive as long as you can while managing the rising water level.',
+                gameplay: 'Click falling coins to shatter them and collect Favor. Missed coins raise the water level; if it reaches the orange line, the game ends. Favor can be spent in the Wish Shop on lifelines that clear the board.',
+                role: 'Programmer & Designer — Sai.',
+                credits: 'Narrative Design: Keem Holt (SteezyGlock). Music & SFX: RichoMaya. Assets Artist: Olga Vener (Avvakira). Tester & Support: Clover Lamporuge.',
+                images: [
+                    ['assets/projects/fountain/gameplay.png', 'Fountain of Wishes gameplay'],
+                    ['assets/projects/fountain/start menu.png', 'Fountain of Wishes start menu'],
+                    ['assets/projects/fountain/title.png', 'Fountain of Wishes title screen']
+                ]
+            },
+            titans: {
+                title: "Titan's Wake",
+                meta: 'Game Jam Project',
+                description: 'A heavy, punishing top-down arena action game set around a dormant Titan whose expanding biometric radar eventually triggers the final encounter.',
+                gameplay: 'The Hunt is a swarm-survival phase against Slimes, Rangers, and Tanks. Harvest crystalline shards to upgrade stats and unlock elemental abilities. In The Awakening, destroy the Titan’s three orbiting elemental cubes to expose its vulnerable core.',
+                role: 'Programming team: Sai, Clover Lamparouge, and Maxx.',
+                credits: 'Narrative Design Lead: Keem Holt (SteezyGlock). Creative/Narrative: Constantine_Kos. Art & Animation: LazyStone. Audio & Music: Richo Maya.',
+                images: [
+                    ['assets/projects/TitansWake/fight.png', "Titan's Wake combat"],
+                    ['assets/projects/TitansWake/boss.png', "Titan's Wake boss encounter"],
+                    ['assets/projects/TitansWake/mc.png', "Titan's Wake player character"],
+                    ['assets/projects/TitansWake/title.png', "Titan's Wake title screen"]
+                ]
+            }
+        };
+
+        function openJamDetails(gameId) {
+            const game = jamDetails[gameId];
+            if (!game) return;
+            document.getElementById('jam-details-title').textContent = game.title;
+            document.getElementById('jam-details-meta').textContent = game.meta;
+            document.getElementById('jam-details-description').textContent = game.description;
+            document.getElementById('jam-details-gameplay').textContent = game.gameplay;
+            document.getElementById('jam-details-role').textContent = game.role;
+            document.getElementById('jam-details-credits').textContent = game.credits;
+            document.getElementById('jam-details-gallery').innerHTML = game.images.map(([src, alt]) =>
+                `<img src="${src}" alt="${alt}">`
+            ).join('');
+            document.getElementById('jam-details').showModal();
+        }
+
+        function closeJamDetails() {
+            document.getElementById('jam-details').close();
         }
     </script>
 </body>
